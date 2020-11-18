@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import GalleryNavigation from './GalleryNavigation';
 
 function App() {
     const [galleries, setGalleries] = useState([]);
@@ -19,7 +21,12 @@ function App() {
         })();
     }, []);
 
-    return <h1>Simple React App</h1>;
+    return (
+        <BrowserRouter>
+            <h1>Simple React App</h1>
+            <GalleryNavigation galleries={galleries}/>
+        </BrowserRouter>
+    );
 }
 
 export default App;
