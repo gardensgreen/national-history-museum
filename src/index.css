@@ -1,5 +1,9 @@
 /* TODO Add site wide styles */
 
 .active {
-  color: red;
+    color: red;
+}
+
+* {
+    padding: 10px;
 }

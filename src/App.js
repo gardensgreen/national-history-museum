@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import GalleryNavigation from './GalleryNavigation';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import GalleryNavigation from "./GalleryNavigation";
+import GalleryView from "./GalleryView";
 
 function App() {
     const [galleries, setGalleries] = useState([]);
@@ -24,7 +25,13 @@ function App() {
     return (
         <BrowserRouter>
             <h1>Simple React App</h1>
-            <GalleryNavigation galleries={galleries}/>
+            <GalleryNavigation galleries={galleries} />
+            <Switch>
+                <Route exact path="/">
+                    <p>Informational splash message</p>
+                </Route>
+                <Route path="/gallery/:id" component={GalleryView} />
+            </Switch>
         </BrowserRouter>
     );
 }
