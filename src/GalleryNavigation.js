@@ -9,7 +9,7 @@ const GalleryNavigation = ({galleries}) => {
       {galleries.map((gallery, i) => (
         <NavLink key={i}
         style={{padding: '5px'}}
-        to={`/gallery/${i}`}>
+        to={`/gallery/${gallery}`}>
           {gallery}
         </NavLink>))
       }
